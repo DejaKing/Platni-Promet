@@ -1,0 +1,22 @@
+<h2 style="text-align: center">Prikaz svih transakcija</h2>
+
+<table class="table table-bordered">
+	<tr>
+		<th>Amount</th>
+		<th>Purpose</th>
+		<th>Date</th>
+		<th>Recipient</th>
+		<th>Sender</th>
+
+	</tr>
+	<tr ng-repeat="transaction in transactions">
+		<td>{{transaction.amount}}</td>
+		<td>{{transaction.purpose}}</td>
+		<td>{{transaction.date}}</td>
+		<td>{{transaction.accountRecipient.client.name}}
+			{{transaction.accountRecipient.client.surname}}</td>
+		<td>{{transaction.accountSender.client.name}}
+			{{transaction.accountSender.client.surname}}</td>
+	</tr>
+
+</table>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.textarea {
+	resize: none
+}
+
+.hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #000;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.class_left_side_div {
+	float: left;
+	width: 530px;
+	border-right: 1px solid;
+	padding: 10px;
+	margin: 10px;
+}
+
+.class_rigth_side_div {
+	float: left;
+	width: 530px;
+	padding: 10px;
+	margin: 10px;
+}
+
+.class_left {
+	width: 500px;
+	height: 70px;
+}
+
+.class_right {
+	height: 30px;
+}
+</style>
+<head />
+<body>
+
+	<div name="left_side" class="class_left_side_div">
+		<div>
+			<span>Uplatilac:</span><br>
+			<select id="value" ng-model="transaction.accountSender" class="form-control" 
+				ng-options="account.client.name for account in accounts track by account.id">
+			</select>
+		</div>
+		
+		<br>
+		<div>
+			<span>Svrha uplate:</span><br>
+			<textarea name="Svrha uplate" ng-model="transaction.purpose" class="class_left"></textarea>
+		</div>
+		<br>
+		<div>
+			<span>Primalac:</span><br>
+			<select id="value" ng-model="transaction.accountRecepient" class="form-control"
+				ng-options="account.client.name for account in accounts track by account.id">
+			</select>
+		</div>
+	</div>
+
+	<div name="right_side" class="class_rigth_side_div">
+
+		<div style="width: 500px; height: 80px">
+
+			<div style="float: left; margin-top: 15px; margin-left: 10px;">
+				<span>Valuta</span><br>
+				<textarea class="class_right"
+					style="width: 60px">RSD</textarea>
+			</div>
+
+			<div style="float: left; margin-top: 15px; margin-left: 15px;">
+				<span>Iznos</span><br>
+				<textarea ng-model="transaction.amount" class="class_right"
+					style="width: 200px"></textarea>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="form-group" style="text-align: right">
+		<div class="col-sm-12">
+			<button ng-click="doTransaction()" type="submit" class="btn btn-success">Izvrsi</button>
+		</div>
+	</div>
+
+</body>
+</html>

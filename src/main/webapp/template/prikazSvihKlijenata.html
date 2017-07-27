@@ -1,0 +1,23 @@
+<h2 style="text-align: center">Prikaz svih klijenata</h2>
+<table class="table table-bordered">
+					<tr>
+						<th>Ime</th>
+						<th>Prezime</th>
+						<th>Email</th>
+						<th>Banka</th>
+						<th>Ulica</th>
+						<th>Grad</th>
+						<th>Drzava</th>
+						
+					</tr>
+					<tr ng-repeat="client in clients">
+						<td> {{client.name}}</td>
+						<td> {{client.surname}}</td>
+						<td> {{client.email}}</td>
+						<td> {{client.bank.name}}</td>
+						<td> {{client.address.street}}</td>
+						<td> {{client.address.city}}</td>
+						<td> {{client.address.country}}</td>
+					</tr>
+				
+				</table>

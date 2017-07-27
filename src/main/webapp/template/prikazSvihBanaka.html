@@ -1,0 +1,19 @@
+<h2 style="text-align: center">Prikaz svih banaka</h2>
+<table class="table table-bordered">
+					<tr>
+						<th>Ime</th>
+						<th>PIBL</th>
+						<th>Ulica</th>
+						<th>Grad</th>
+						<th>Drzava</th>
+						
+					</tr>
+					<tr ng-repeat="bank in banks">
+						<td> {{bank.name}}</td>
+						<td> {{bank.pib}}</td>
+						<td> {{bank.address.street}}</td>
+						<td> {{bank.address.city}}</td>
+						<td> {{bank.address.country}}</td>
+					</tr>
+				
+				</table>
